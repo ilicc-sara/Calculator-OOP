@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(30, 47, 30);
+  background: linear-gradient(to right, rgb(6, 46, 6), rgb(38, 65, 38));
+}
+
+.container {
+  width: 420px;
+  margin: 10vh auto;
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-content: center;
+  background-color: rgb(48, 48, 48);
+  padding: 20px 0;
+  border-radius: 10px;
+}
+
+.screen {
+  width: 375px;
+  height: 100px;
+  background-color: rgb(22, 31, 22);
+  border-radius: 8px;
+}
+
+.second-num {
+  width: 100%;
+  height: 35px;
+  background-color: rgb(166, 196, 179);
+  position: relative;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.second {
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
+  font-size: 18px;
+}
+
+.first-num {
+  width: 100%;
+  height: 65px;
+  background-color: rgb(204, 239, 219);
+  position: relative;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.first {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 28px;
+}
+
+.function-cont {
+  width: 375px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.btn {
+  height: 65px;
+  background-color: rgb(97, 9, 82);
+  color: wheat;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 2px, solid black;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.clear {
+  background-color: rgb(8, 65, 8);
+}
+
+.delete {
+  background-color: rgb(97, 13, 13);
+}
+
+.operations {
+  display: grid;
+  width: 375px;
+  /* padding: 0 10px; */
+  grid-template-columns: 3fr 1fr;
+  place-items: center;
+}
+/* grid-template-rows: 1fr;
+  column-gap: 0;
+  column-gap: 10px;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+  justify-content: center;
+  align-content: center;
+} */
+
+.num-cont {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 4 (1fr);
+  column-gap: 16px;
+  place-items: center;
+  justify-content: center;
+  row-gap: 10px;
+}
+
+.op-cont {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-self: end;
+  row-gap: 10px;
+}
+
+.op-btn,
+.num-btn,
+/* .button, */
+.equals {
+  width: 80px;
+  height: 80px;
+  background-color: black;
+  color: wheat;
+  font-size: 28px;
+  border-radius: 5px;
+  border: none;
+}
+
+.op-btn:hover,
+.num-btn:hover,
+/* .button, */
+.equals :hover {
+  cursor: pointer;
+}
