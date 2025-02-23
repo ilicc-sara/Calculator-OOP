@@ -4,9 +4,16 @@
   box-sizing: border-box;
 }
 
+html {
+  /* font-family: "Orbitron", serif; */
+  font-family: "Roboto Mono", monospace, "sans-serif";
+}
+
 body {
   background-color: rgb(30, 47, 30);
   background: linear-gradient(to right, rgb(6, 46, 6), rgb(38, 65, 38));
+  /* font-family: "Orbitron", serif; */
+  font-family: "Roboto Mono", monospace, "sans-serif";
 }
 
 .container {
@@ -136,6 +143,7 @@ body {
   font-size: 28px;
   border-radius: 5px;
   border: none;
+  font-family: "Roboto Mono", monospace, "sans-serif";
 }
 
 .op-btn:hover,
