@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background-color: rgb(30, 47, 30);
+  /* background-color: rgb(255, 255, 255); */
   background: linear-gradient(to right, rgb(6, 46, 6), rgb(38, 65, 38));
   /* font-family: "Orbitron", serif; */
   font-family: "Roboto Mono", monospace, "sans-serif";
