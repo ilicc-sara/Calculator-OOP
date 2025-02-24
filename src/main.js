@@ -19,7 +19,7 @@ operationsCont.addEventListener("click", function (e) {
 
   if (e.target.classList.contains("num-btn")) {
     firstNumber = e.target.getAttribute("data-id");
-    console.log(firstNumber);
+    // console.log(firstNumber);
   }
 
   if (e.target.classList.contains("op-btn")) {
@@ -29,8 +29,9 @@ operationsCont.addEventListener("click", function (e) {
 
   if (firstNumber !== "") {
     secondNumber = firstNumber;
-    console.log(secondNumber);
     firstNumber = "";
+    console.log("second number", secondNumber);
+    console.log("first number", firstNumber);
   }
 });
 
