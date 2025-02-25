@@ -22,7 +22,11 @@ operationsCont.addEventListener("click", function (e) {
       firstNumber = e.target.getAttribute("data-id");
       console.log("prvi broj kada drugi nije definisan", firstNumber);
     }
-  } else if (firstNumber && e.target.classList.contains("num-btn")) {
+  } else if (
+    firstNumber &&
+    operation &&
+    e.target.classList.contains("num-btn")
+  ) {
     secondNumber = firstNumber;
     firstNumber = e.target.getAttribute("data-id");
     console.log("drugi broj", secondNumber);
@@ -32,12 +36,6 @@ operationsCont.addEventListener("click", function (e) {
   if (e.target.classList.contains("op-btn")) {
     operation = e.target.getAttribute("data-id");
     console.log(operation);
-  }
-
-  if (e.target.classList.contains("equals")) {
-    if (operation === "+") {
-      console.log(Number(firstNumber) + Number(secondNumber));
-    }
   }
 });
 
@@ -69,9 +67,9 @@ class Calculator {
   }
 }
 
-const matematika = new Calculator(6, 8);
+// const matematika = new Calculator(10, 8);
 
-console.log(matematika.calculate("+"));
-console.log(matematika.calculate("-"));
-console.log(matematika.calculate("*"));
-console.log(matematika.calculate("/"));
+// console.log(matematika.calculate("+"));
+// console.log(matematika.calculate("-"));
+// console.log(matematika.calculate("*"));
+// console.log(matematika.calculate("/"));
