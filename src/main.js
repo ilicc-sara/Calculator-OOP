@@ -33,12 +33,45 @@ operationsCont.addEventListener("click", function (e) {
     operation = e.target.getAttribute("data-id");
     console.log(operation);
   }
+
+  if (e.target.classList.contains("equals")) {
+    if (operation === "+") {
+      console.log(Number(firstNumber) + Number(secondNumber));
+    }
+  }
 });
 
 class Calculator {
-  constructor(firstNumber, secondNumber, operation) {
+  constructor(firstNumber, secondNumber) {
     this.firstNumber = firstNumber;
     this.secondNumber = secondNumber;
-    this.operation = operation;
+    this.operation = "";
+    this.result = "";
+  }
+
+  calculate(operation) {
+    if (operation === "+") {
+      return (this.result =
+        Number(this.firstNumber) + Number(this.secondNumber));
+    }
+    if (operation === "-") {
+      return (this.result =
+        Number(this.firstNumber) - Number(this.secondNumber));
+    }
+    if (operation === "*") {
+      return (this.result =
+        Number(this.firstNumber) * Number(this.secondNumber));
+    }
+    if (operation === "/") {
+      return (this.result =
+        Number(this.firstNumber) / Number(this.secondNumber));
+    }
   }
 }
+
+const matematika = new Calculator(6, 8);
+
+console.log(matematika.calculate("+"));
+console.log(matematika.calculate("-"));
+console.log(matematika.calculate("*"));
+console.log(matematika.calculate("/"));
