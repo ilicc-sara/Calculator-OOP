@@ -9,29 +9,29 @@ const deleteBtn = document.querySelector(".delete");
 
 const operationsCont = document.querySelector(".operations");
 
-let firstNumber = "";
-let secondNumber = "";
-let operation = "";
+let firstNumber;
+let secondNumber;
+let operation;
 
 operationsCont.addEventListener("click", function (e) {
   // prettier-ignore
   if (!e.target.classList.contains('num-btn') && !e.target.classList.contains('op-btn') && !e.target.classList.contains('equals')) return;
 
-  if (e.target.classList.contains("num-btn")) {
+  if (firstNumber === undefined) {
+    if (e.target.classList.contains("num-btn")) {
+      firstNumber = e.target.getAttribute("data-id");
+      console.log("prvi broj kada drugi nije definisan", firstNumber);
+    }
+  } else if (firstNumber && e.target.classList.contains("num-btn")) {
+    secondNumber = firstNumber;
     firstNumber = e.target.getAttribute("data-id");
-    // console.log(firstNumber);
+    console.log("drugi broj", secondNumber);
+    console.log("prvi broj", firstNumber);
   }
 
   if (e.target.classList.contains("op-btn")) {
     operation = e.target.getAttribute("data-id");
     console.log(operation);
-  }
-
-  if (firstNumber !== "") {
-    secondNumber = firstNumber;
-    firstNumber = "";
-    console.log("second number", secondNumber);
-    console.log("first number", firstNumber);
   }
 });
 
