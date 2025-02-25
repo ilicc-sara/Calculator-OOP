@@ -17,22 +17,22 @@ operationsCont.addEventListener("click", function (e) {
   // prettier-ignore
   if (!e.target.classList.contains('num-btn') && !e.target.classList.contains('op-btn') && !e.target.classList.contains('equals')) return;
 
+  if (e.target.classList.contains("op-btn")) {
+    operation = e.target.getAttribute("data-id");
+    console.log(operation);
+  }
+
   if (e.target.classList.contains("num-btn")) {
+    if (!secondNumber) {
+      firstNumber = firstNumber + e.target.getAttribute("data-id");
+      console.log("prvi broj kada drugi nije definisan", firstNumber);
+    }
     if (operation && firstNumber !== "") {
       secondNumber = firstNumber;
       firstNumber = "";
       console.log("drugi broj", secondNumber);
       console.log("prvi broj", firstNumber);
     }
-    if (firstNumber === "") {
-      firstNumber = firstNumber + e.target.getAttribute("data-id");
-      console.log("prvi broj kada drugi nije definisan", firstNumber);
-    }
-  }
-
-  if (e.target.classList.contains("op-btn")) {
-    operation = e.target.getAttribute("data-id");
-    console.log(operation);
   }
 });
 
