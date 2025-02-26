@@ -27,9 +27,10 @@ operationsCont.addEventListener("click", function (e) {
       firstNumber = firstNumber + e.target.getAttribute("data-id");
       console.log("prvi broj kada drugi nije definisan", firstNumber);
     }
-    if (operation && firstNumber !== "") {
+    if (operation && !secondNumber) {
       secondNumber = firstNumber;
       firstNumber = "";
+      firstNumber = firstNumber + e.target.getAttribute("data-id");
       console.log("drugi broj", secondNumber);
       console.log("prvi broj", firstNumber);
     }
