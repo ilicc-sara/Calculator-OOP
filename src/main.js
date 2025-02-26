@@ -28,7 +28,7 @@ class Calculator {
     }
     if (operation === "-") {
       return (this.result =
-        Number(this.firstNumber) - Number(this.secondNumber));
+        Number(this.secondNumber) - Number(this.firstNumber));
     }
     if (operation === "*") {
       return (this.result =
@@ -36,7 +36,7 @@ class Calculator {
     }
     if (operation === "/") {
       return (this.result =
-        Number(this.firstNumber) / Number(this.secondNumber));
+        Number(this.secondNumber) / Number(this.firstNumber));
     }
   }
 }
@@ -50,20 +50,27 @@ operationsCont.addEventListener("click", function (e) {
     console.log(operation);
   }
 
-  const math = new Calculator(firstNumber, secondNumber);
-
   if (e.target.classList.contains("num-btn")) {
     if (firstNumber === "") {
       firstNumber = firstNumber + e.target.getAttribute("data-id");
       console.log("prvi broj kada drugi nije definisan", firstNumber);
     }
-    if (operation) {
-      firstNumber = math.calculate(operation);
+    if (operation && !secondNumber) {
       secondNumber = firstNumber;
       firstNumber = "";
       firstNumber = firstNumber + e.target.getAttribute("data-id");
       console.log("drugi broj", secondNumber);
       console.log("prvi broj", firstNumber);
+    }
+    if (firstNumber !== "" && secondNumber && operation) {
+      firstNumber = "";
+      firstNumber = firstNumber + e.target.getAttribute("data-id");
+      const math = new Calculator(firstNumber, secondNumber);
+      console.log(math.calculate(operation));
+      secondNumber = math.calculate(operation);
+      // secondNumber = Number(secondNumber) + Number(firstNumber);
+      console.log("prvi broj posle operacije", firstNumber);
+      console.log("drugi broj posle operacije", secondNumber);
     }
   }
 
