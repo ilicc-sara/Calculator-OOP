@@ -63,11 +63,11 @@ operationsCont.addEventListener("click", function (e) {
       console.log("prvi broj", firstNumber);
     }
     if (firstNumber !== "" && secondNumber && operation) {
-      firstNumber = "";
-      firstNumber = firstNumber + e.target.getAttribute("data-id");
       const math = new Calculator(firstNumber, secondNumber);
       console.log(math.calculate(operation));
       secondNumber = math.calculate(operation);
+      firstNumber = "";
+      firstNumber = firstNumber + e.target.getAttribute("data-id");
       // secondNumber = Number(secondNumber) + Number(firstNumber);
       console.log("prvi broj posle operacije", firstNumber);
       console.log("drugi broj posle operacije", secondNumber);
