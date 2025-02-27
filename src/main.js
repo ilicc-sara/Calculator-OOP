@@ -9,22 +9,26 @@ const deleteBtn = document.querySelector(".delete");
 
 const operationsCont = document.querySelector(".operations");
 
-let firstNumber = "";
-let secondNumber;
-let operation;
+// let firstNumber = "";
+// let secondNumber;
+// let operation;
+
+const add = function (a, b) {
+  return a + b;
+};
 
 class Calculator {
-  constructor(firstNumber, secondNumber) {
-    this.firstNumber = firstNumber;
-    this.secondNumber = secondNumber;
+  constructor() {
+    this.firstNumber = "";
+    this.secondNumber;
     this.operation = "";
     this.result = "";
   }
 
   calculate(operation) {
     if (operation === "+") {
-      return (this.result =
-        Number(this.firstNumber) + Number(this.secondNumber));
+      return (this.result = add(this.firstNumber, this.secondNumber));
+      // Number(this.firstNumber) + Number(this.secondNumber));
     }
     if (operation === "-") {
       return (this.result =
@@ -40,7 +44,7 @@ class Calculator {
     }
   }
 }
-
+const math = new Calculator();
 operationsCont.addEventListener("click", function (e) {
   // prettier-ignore
   if (!e.target.classList.contains('num-btn') && !e.target.classList.contains('op-btn') && !e.target.classList.contains('equals')) return;
@@ -52,7 +56,9 @@ operationsCont.addEventListener("click", function (e) {
 
   if (e.target.classList.contains("num-btn")) {
     if (firstNumber === "") {
-      firstNumber = firstNumber + e.target.getAttribute("data-id");
+      // firstNumber = firstNumber + e.target.getAttribute("data-id");
+      // math.firstNUmber = math.firstNumber + e.target.getAttribute("data-id");
+      // math.setFirstNUmber(e.target.getAttribute("data-id"));
       console.log("prvi broj kada drugi nije definisan", firstNumber);
     }
     if (operation && !secondNumber) {
@@ -63,7 +69,6 @@ operationsCont.addEventListener("click", function (e) {
       console.log("prvi broj", firstNumber);
     }
     if (firstNumber !== "" && secondNumber && operation) {
-      const math = new Calculator(firstNumber, secondNumber);
       console.log(math.calculate(operation));
       secondNumber = math.calculate(operation);
       firstNumber = "";
@@ -78,9 +83,4 @@ operationsCont.addEventListener("click", function (e) {
   secondNumberEl.textContent = secondNumber;
 });
 
-// const matematika = new Calculator(10, 8);
-
-// console.log(matematika.calculate("+"));
-// console.log(matematika.calculate("-"));
-// console.log(matematika.calculate("*"));
-// console.log(matematika.calculate("/"));
+// prvo napraviti da radi 2+2-1+2
