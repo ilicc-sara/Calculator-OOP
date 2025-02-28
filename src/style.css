@@ -11,7 +11,8 @@ html {
 }
 
 body {
-  background: linear-gradient(to right, rgb(6, 46, 6), rgb(38, 65, 38));
+  /* background: linear-gradient(to right, rgb(6, 46, 6), rgb(38, 65, 38)); */
+  background-color: black;
   font-family: "Roboto Mono", monospace, "sans-serif";
 }
 
