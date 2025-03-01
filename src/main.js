@@ -10,7 +10,7 @@ const deleteBtn = document.querySelector(".delete");
 const operationsCont = document.querySelector(".operations");
 
 let num1 = "";
-let num2;
+let num2 = 0;
 let operation;
 
 class Calculator {
@@ -44,12 +44,16 @@ class Calculator {
 operationsCont.addEventListener("click", function (e) {
   if (e.target.classList.contains("op-btn")) operation = e.target.textContent;
 
+  const math = new Calculator(num1, num2);
   num1 = num1 + e.target.textContent;
   console.log("prvi broj kada drugi nije definisan", num1);
 
   if (operation) {
-    num2 = num1;
+    num1 = math.calculate(operation);
+    num2 = num1 + operation;
     num1 = "";
+    operation = undefined;
+    console.log("operacija", operation);
     console.log("prvi broj nakon operacije", num1);
     console.log("drugi broj nakon operacije", num2);
   }
