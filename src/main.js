@@ -9,8 +9,8 @@ const deleteBtn = document.querySelector(".delete");
 
 const operationsCont = document.querySelector(".operations");
 
-let firstNumber = "";
-let secondNumber;
+let num1 = "";
+let num2;
 let operation;
 
 class Calculator {
@@ -42,41 +42,54 @@ class Calculator {
 }
 
 operationsCont.addEventListener("click", function (e) {
-  // prettier-ignore
-  if (!e.target.classList.contains('num-btn') && !e.target.classList.contains('op-btn') && !e.target.classList.contains('equals')) return;
-
-  if (e.target.classList.contains("op-btn")) {
-    operation = e.target.getAttribute("data-id");
-    console.log(operation);
-  }
-
   if (e.target.classList.contains("num-btn")) {
-    if (firstNumber === "") {
-      firstNumber = firstNumber + e.target.getAttribute("data-id");
-      console.log("prvi broj kada drugi nije definisan", firstNumber);
-    }
-    if (operation && !secondNumber) {
-      secondNumber = firstNumber;
-      firstNumber = "";
-      firstNumber = firstNumber + e.target.getAttribute("data-id");
-      console.log("drugi broj", secondNumber);
-      console.log("prvi broj", firstNumber);
-    }
-    if (firstNumber !== "" && secondNumber && operation) {
-      const math = new Calculator(firstNumber, secondNumber);
-      console.log(math.calculate(operation));
-      secondNumber = math.calculate(operation);
-      firstNumber = "";
-      firstNumber = firstNumber + e.target.getAttribute("data-id");
-      // secondNumber = Number(secondNumber) + Number(firstNumber);
-      console.log("prvi broj posle operacije", firstNumber);
-      console.log("drugi broj posle operacije", secondNumber);
-    }
+    num1 = num1 + e.target.textContent;
+    console.log(num1);
   }
 
-  firstNumberEl.textContent = firstNumber;
-  secondNumberEl.textContent = secondNumber;
+  if (num1 !== "" && operation) {
+    num2 = num1;
+    num1 = "";
+    console.log(num2);
+  }
 });
+
+// operationsCont.addEventListener("click", function (e) {
+//   // prettier-ignore
+//   if (!e.target.classList.contains('num-btn') && !e.target.classList.contains('op-btn') && !e.target.classList.contains('equals')) return;
+
+//   if (e.target.classList.contains("op-btn")) {
+//     operation = e.target.getAttribute("data-id");
+//     console.log(operation);
+//   }
+
+//   if (e.target.classList.contains("num-btn")) {
+//     if (firstNumber === "") {
+//       firstNumber = firstNumber + e.target.getAttribute("data-id");
+//       console.log("prvi broj kada drugi nije definisan", firstNumber);
+//     }
+//     if (operation && !secondNumber) {
+//       secondNumber = firstNumber;
+//       firstNumber = "";
+//       firstNumber = firstNumber + e.target.getAttribute("data-id");
+//       console.log("drugi broj", secondNumber);
+//       console.log("prvi broj", firstNumber);
+//     }
+//     if (firstNumber !== "" && secondNumber && operation) {
+//       const math = new Calculator(firstNumber, secondNumber);
+//       console.log(math.calculate(operation));
+//       secondNumber = math.calculate(operation);
+//       firstNumber = "";
+//       firstNumber = firstNumber + e.target.getAttribute("data-id");
+//       // secondNumber = Number(secondNumber) + Number(firstNumber);
+//       console.log("prvi broj posle operacije", firstNumber);
+//       console.log("drugi broj posle operacije", secondNumber);
+//     }
+//   }
+
+//   firstNumberEl.textContent = firstNumber;
+//   secondNumberEl.textContent = secondNumber;
+// });
 
 // const matematika = new Calculator(10, 8);
 
