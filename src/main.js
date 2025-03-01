@@ -13,6 +13,11 @@ let num1 = "";
 let num2 = 0;
 let operation;
 
+let add = (a, b) => a + b;
+let subtract = (a, b) => a - b;
+let multiply = (a, b) => a * b;
+let divide = (a, b) => a / b;
+
 class Calculator {
   constructor(firstNumber, secondNumber) {
     this.firstNumber = firstNumber;
@@ -23,20 +28,28 @@ class Calculator {
 
   calculate(operation) {
     if (operation === "+") {
-      return (this.result =
-        Number(this.firstNumber) + Number(this.secondNumber));
+      return (this.result = add(
+        Number(this.firstNumber),
+        Number(this.secondNumber)
+      ));
     }
     if (operation === "-") {
-      return (this.result =
-        Number(this.secondNumber) - Number(this.firstNumber));
+      return (this.result = subtract(
+        Number(this.secondNumber),
+        Number(this.firstNumber)
+      ));
     }
     if (operation === "*") {
-      return (this.result =
-        Number(this.firstNumber) * Number(this.secondNumber));
+      return (this.result = multiply(
+        Number(this.firstNumber),
+        Number(this.secondNumber)
+      ));
     }
     if (operation === "/") {
-      return (this.result =
-        Number(this.secondNumber) / Number(this.firstNumber));
+      return (this.result = divide(
+        Number(this.secondNumber),
+        Number(this.firstNumber)
+      ));
     }
   }
 }
