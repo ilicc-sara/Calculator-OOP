@@ -42,16 +42,20 @@ class Calculator {
 }
 
 operationsCont.addEventListener("click", function (e) {
-  if (e.target.classList.contains("num-btn")) {
-    num1 = num1 + e.target.textContent;
-    console.log(num1);
-  }
+  if (e.target.classList.contains("op-btn")) operation = e.target.textContent;
 
-  if (num1 !== "" && operation) {
+  num1 = num1 + e.target.textContent;
+  console.log("prvi broj kada drugi nije definisan", num1);
+
+  if (operation) {
     num2 = num1;
     num1 = "";
-    console.log(num2);
+    console.log("prvi broj nakon operacije", num1);
+    console.log("drugi broj nakon operacije", num2);
   }
+
+  firstNumberEl.textContent = num1;
+  secondNumberEl.textContent = num2;
 });
 
 // operationsCont.addEventListener("click", function (e) {
